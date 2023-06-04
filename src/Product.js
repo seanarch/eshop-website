@@ -8,7 +8,13 @@ function Product({ id, title, image, price, rating }) {
         <div className="product__info">
           <p>{title}</p>
           <p className="product__price">${price}</p>
-          <div className="product__rating">⭐️⭐️⭐️⭐️⭐️{rating}</div>
+          <div className="product__rating">
+            {Array(rating)
+              .fill()
+              .map((_, i) => (
+                <p>⭐️</p>
+              ))}
+          </div>
         </div>
         <img src={image} alt="product-image" />
       </div>
