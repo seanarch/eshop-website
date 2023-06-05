@@ -8,10 +8,12 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
     <div className="header">
-      <div className="header__logo">
-        <StorefrontIcon className="header__logoImage" fontSize="large" />
-        <h2 className="header__logoTitle">eShop</h2>
-      </div>
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <div className="header__logo">
+          <StorefrontIcon className="header__logoImage" fontSize="large" />
+          <h2 className="header__logoTitle">eShop</h2>
+        </div>
+      </Link>
 
       <div className="header__search">
         <input type="text" className="header__searchInput" />
@@ -28,19 +30,12 @@ function Header() {
           <span className="nav__itemLineTwo">Shop</span>
         </div>
 
-        <Link to="/checkout">
+        <Link to="/checkout" style={{ textDecoration: "none" }}>
           <div className="nav__itemBasket">
             <ShoppingBasketIcon />
             <span className="nav__itemLineTwo nav__basketCount"></span>
           </div>
         </Link>
-
-        {/* <Link to="/checkout" style={{ textDecoration: "none" }}>
-          <div className="nav__itemBasket">
-            <ShoppingBasketIcon />
-            <span className="nav__itemLineTwo nav__basketCount"></span>
-          </div>
-        </Link> */}
       </div>
     </div>
   );
